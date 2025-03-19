@@ -9,13 +9,14 @@
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f4f4f4;
+            background-color: #ffe5b4; /* Peach background */
         }
         header {
-            background: #007BFF;
+            background: #a2dff7; /* Light blue */
             color: white;
-            padding: 10px 20px;
+            padding: 20px;
             text-align: center;
+            animation: fadeIn 1s ease-in-out; /* Animation for header */
         }
         nav {
             margin: 10px 0;
@@ -24,6 +25,10 @@
             color: white;
             margin: 0 15px;
             text-decoration: none;
+            font-weight: bold;
+        }
+        nav a:hover {
+            text-decoration: underline; /* Hover effect */
         }
         .container {
             width: 80%;
@@ -31,9 +36,11 @@
             overflow: hidden;
         }
         .slider {
-            position: relative;
             height: 300px;
-            background: url('slider-image.jpg') no-repeat center center/cover;
+            background: url('https://pfst.cf2.poecdn.net/base/image/2fee9194c8a679f3377da5e4c4e9e132ff2eccb2fb9b8153bbcc2bfdbabecf1e?w=1024&h=768') no-repeat center center/cover;
+            border-radius: 5px;
+            margin-bottom: 20px;
+            animation: slideIn 1s ease-in-out; /* Animation for slider */
         }
         .section {
             padding: 20px;
@@ -41,15 +48,35 @@
             margin-bottom: 20px;
             border-radius: 5px;
             box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            animation: bounceIn 1s; /* Animation for sections */
         }
         footer {
             text-align: center;
             padding: 20px;
-            background: #007BFF;
+            background: #a2dff7; /* Light blue */
             color: white;
             position: relative;
             bottom: 0;
             width: 100%;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        @keyframes slideIn {
+            from { transform: translateY(-20px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+        @keyframes bounceIn {
+            from {
+                transform: scale(0.5);
+                opacity: 0;
+            }
+            to {
+                transform: scale(1);
+                opacity: 1;
+            }
         }
         @media (max-width: 600px) {
             nav a {
@@ -64,20 +91,30 @@
 <header>
     <h1>Perpustakaan DiniGurky</h1>
     <nav>
-    
-        <a href="#">Tentang Kami</a>
-        <a href="#">Kontak</a>
+        <a href="#">Home</a>
+        <a href="#">About Me</a>
+        <a href="#">Contact Us</a>
     </nav>
 </header>
 
 <div class="container">
     <div class="slider"></div>
-    
+
     <div class="section">
         <h2>Sekilas Tentang Perpustakaan</h2>
-        <p>"Perpustakaan ini merupakan tempat yang menampilkan tugas-tugas terkait matakuliah saya. Di sini, saya akan menyajikan model-model terbaik dan mencurahkan hasil kreativitas saya.".</p>
+        <p>Perpustakaan ini merupakan tempat yang menampilkan tugas-tugas terkait matakuliah saya. Di sini, saya akan menyajikan model-model terbaik dan mencurahkan hasil kreativitas saya.</p>
     </div>
 
+    <div class="section">
+        <h2>Jam Operasional</h2>
+        <p>Perpustakaan buka setiap hari:</p>
+        <ul>
+            <li>Senin - Jumat: 08:00 - 17:00</li>
+            <li>Sabtu: 09:00 - 15:00</li>
+            <li>Minggu: Tutup</li>
+        </ul>
+    </div>
+</div>
 
 <footer>
     <p>&copy; Perpustakaan DiniGurky 2025</p>
