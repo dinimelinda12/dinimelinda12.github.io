@@ -1,61 +1,73 @@
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Arial', sans-serif;
     margin: 0;
-    padding: 20px;
-    background-color: #e0f7fa;
+    padding: 0;
+    background-color: #e0f7fa; /* Light blue background */
     color: #333;
 }
 
 header {
-    background-color: #4caf50;
+    background-color: #00796b; /* Darker green */
     color: white;
-    padding: 15px 0;
+    padding: 20px 0;
     text-align: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Shadow effect */
 }
 
-h1 {
-    margin: 0;
+nav ul {
+    list-style-type: none; /* Remove bullet points */
+    padding: 0;
 }
 
-h2 {
-    color: #4caf50;
+nav ul li {
+    display: inline; /* Horizontal menu */
+    margin: 0 15px;
 }
 
-.animated-text {
-    animation: fadeIn 2s ease-in-out; /* Add fade-in animation */
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    padding: 5px 10px; /* Padding for links */
+    transition: background-color 0.3s; /* Smooth transition */
+}
+
+nav ul li a:hover {
+    background-color: #004d40; /* Darker green on hover */
+    border-radius: 5px; /* Rounded corners on hover */
+}
+
+main {
+    padding: 20px;
+    text-align: center; /* Center text */
 }
 
 .welcome-image {
     width: 40%;
     max-width: 400px;
     height: auto;
-    display: block;
-    margin: 20px auto; /* Center the image */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Shadow effect */
 }
 
 section {
-    margin-bottom: 20px;
+    margin: 20px 0;
     padding: 15px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    background-color: #ffffff;
+    background-color: white; /* White background for sections */
+    border-radius: 10px; /* Rounded corners for sections */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    transition: transform 0.3s; /* Smooth transition */
 }
 
-a {
-    text-decoration: none;
-    color: #4caf50;
+section:hover {
+    transform: translateY(-5px); /* Raise sections on hover */
 }
 
-.sidebar {
-    margin-top: 20px;
-}
-
-/* Animation keyframes */
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-    }
-    to {
-        opacity: 1;
-    }
+footer {
+    background-color: #00796b; /* Darker green footer */
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    position: relative;
+    bottom: 0;
+    width: 100%;
 }
