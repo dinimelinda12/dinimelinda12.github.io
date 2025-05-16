@@ -116,6 +116,89 @@
         </ul>
     </div>
 </div>
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Instagram Reel Showcase</title>
+  <style>
+    .reel-container {
+      position: relative;
+      width: 350px;
+      margin: 40px auto;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.2);
+      transition: transform 0.2s;
+    }
+    .reel-container:hover {
+      transform: scale(1.04);
+      box-shadow: 0 16px 32px rgba(0,0,0,0.3);
+    }
+    .reel-thumbnail {
+      width: 100%;
+      display: block;
+      filter: brightness(0.85);
+      transition: filter 0.2s;
+    }
+    .reel-container:hover .reel-thumbnail {
+      filter: brightness(1);
+    }
+    .play-button {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background: rgba(0,0,0,0.5);
+      border: none;
+      border-radius: 50%;
+      width: 64px;
+      height: 64px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+    .play-button:hover {
+      background: rgba(0,0,0,0.7);
+    }
+    .play-button svg {
+      fill: #fff;
+      width: 36px;
+      height: 36px;
+    }
+    .caption {
+      padding: 12px;
+      background: #fff;
+      border-bottom-left-radius: 16px;
+      border-bottom-right-radius: 16px;
+      text-align: center;
+      font-family: 'Segoe UI', Arial, sans-serif;
+      font-size: 1rem;
+    }
+  </style>
+</head>
+<body>
+
+<div class="reel-container">
+  <a href="https://www.instagram.com/reel/DJSvulNSo0k/" target="_blank">
+    <!-- Ganti URL gambar di bawah dengan thumbnail reel Anda -->
+    <img src="https://your-thumbnail-url.com/thumbnail.jpg" alt="Instagram Reel Thumbnail" class="reel-thumbnail">
+    <button class="play-button" aria-label="Play Reel">
+      <svg viewBox="0 0 64 64">
+        <polygon points="24,16 52,32 24,48" />
+      </svg>
+    </button>
+  </a>
+  <div class="caption">
+    Tonton Reel menarik ini di Instagram!
+  </div>
+</div>
+
+</body>
+</html>
 
 <footer>
     <p>&copy; Perpustakaan DiniGurky 2025</p>
@@ -123,67 +206,4 @@
 
 </body>
 </html>
-<!DOCTYPE html>
-<html lang="id">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Event Terbaru - Universitas Sumatera Utara</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
-            margin: 0;
-            padding: 20px;
-        }
-        .container {
-            max-width: 800px;
-            margin: auto;
-            background: white;
-            border-radius: 8px;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-            padding: 20px;
-        }
-        h1 {
-            text-align: center;
-            color: #333;
-        }
-        .event {
-            margin: 20px 0;
-            padding: 15px;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-        }
-        .event h2 {
-            color: #007BFF;
-        }
-        .event p {
-            color: #555;
-        }
-        .event a {
-            display: inline-block;
-            margin-top: 10px;
-            padding: 10px 15px;
-            background-color: #28a745;
-            color: white;
-            text-decoration: none;
-            border-radius: 5px;
-        }
-        .event a:hover {
-            background-color: #218838;
-        }
-    </style>
-</head>
-<body>
 
-<div class="container">
-    <h1>Event Terbaru</h1>
-    <div class="event">
-        <h2>Diktisaintek Berdampak</h2>
-        <p>Di Hari Pendidikan Nasional kemarin, @kemdiktisaintek.ri meluncurkan program “Diktisaintek Berdampak” yang bertujuan untuk meningkatkan kualitas pendidikan.</p>
-        <a href="https://www.instagram.com/reel/DJSvulNSo0k/?igsh=MW15c29reGh4ZzAwdg==">Lihat Event</a>
-    </div>
-</div>
-
-</body>
-</html>
