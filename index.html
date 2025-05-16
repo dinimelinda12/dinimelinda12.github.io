@@ -44,6 +44,7 @@
       border-radius: 20px;
       transition: background 0.2s, color 0.2s, box-shadow 0.2s;
       font-size: 1.05rem;
+      cursor: pointer;
     }
     .nav a:hover {
       background: #66a6ff;
@@ -58,18 +59,22 @@
       box-shadow: 0 8px 32px rgba(102,166,255,0.13);
       padding: 30px 28px 40px 28px;
     }
+
+    /* Animasi gambar atas */
     .library-img {
       width: 100%;
       border-radius: 16px;
       margin-bottom: 24px;
-      box-shadow: 0 4px 16px #66a6ff22;
       border: 4px solid #f3f7ff;
-      transition: transform 0.2s;
+      box-shadow: 0 4px 16px #66a6ff22;
+      transition: transform 0.5s ease, box-shadow 0.5s ease;
+      cursor: pointer;
     }
     .library-img:hover {
-      transform: scale(1.03) rotate(-1deg);
-      box-shadow: 0 8px 32px #66a6ff44;
+      transform: scale(1.05) rotate(-1deg);
+      box-shadow: 0 12px 40px #66a6ff66;
     }
+
     .section-title {
       font-family: 'Pacifico', cursive;
       color: #3a4d7a;
@@ -277,9 +282,9 @@
   <div class="header">
     <h1>Perpustakaan DiniGurky</h1>
     <nav class="nav">
-      <a href="Home"target="_blank" rel="noopener noreferrer">Home</a>
-      <a href="about.html" target="_blank" rel="noopener noreferrer">About Me</a>
-      <a href="Contact Us" target="_blank" rel="noopener noreferrer">Contact Us</a>
+      <a href="index.html" target="_self">Home</a>
+      <a href="about.html" target="_self">About Me</a>
+      <a href="contact.html" target="_self">Contact Us</a>
     </nav>
   </div>
 
@@ -383,36 +388,26 @@
   </div>
 
   <script>
-    // Fungsi untuk set cookie
     function setCookie(name, value, days) {
       const d = new Date();
-      d.setTime(d.getTime() + days * 24 * 60 * 60 * 1000);
-      const expires = "expires=" + d.toUTCString();
-      document.cookie = name + "=" + value + ";" + expires + ";path=/";
+      d.setTime(d.getTime() + days*24*60*60*1000);
+      document.cookie = name + "=" + value + ";expires=" + d.toUTCString() + ";path=/";
     }
-
-    // Fungsi untuk get cookie
     function getCookie(name) {
       const cname = name + "=";
-      const decodedCookie = decodeURIComponent(document.cookie);
-      const ca = decodedCookie.split(';');
-      for(let i = 0; i < ca.length; i++) {
-        let c = ca[i].trim();
-        if (c.indexOf(cname) == 0) {
-          return c.substring(cname.length, c.length);
-        }
+      const decoded = decodeURIComponent(document.cookie);
+      const ca = decoded.split(';');
+      for(let c of ca) {
+        c = c.trim();
+        if(c.indexOf(cname) === 0) return c.substring(cname.length);
       }
       return "";
     }
-
-    // Cek cookie saat halaman dimuat
     window.onload = function() {
-      if (getCookie("cookieAccepted") !== "true") {
+      if(getCookie("cookieAccepted") !== "true") {
         document.getElementById("cookie-banner").style.display = "flex";
       }
     };
-
-    // Event klik tombol terima cookies
     document.getElementById("accept-cookies").addEventListener("click", function() {
       setCookie("cookieAccepted", "true", 365);
       document.getElementById("cookie-banner").style.display = "none";
