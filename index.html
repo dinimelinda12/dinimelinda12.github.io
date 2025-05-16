@@ -78,6 +78,48 @@
       margin-bottom: 18px;
       letter-spacing: 1px;
     }
+    /* Event */
+    .event-list {
+      margin-top: 10px;
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+    }
+    .event-card {
+      background: #eaf6fb;
+      border-left: 6px solid #66a6ff;
+      border-radius: 10px;
+      padding: 16px 20px;
+      box-shadow: 0 2px 8px #a3d8f433;
+      transition: box-shadow 0.2s;
+    }
+    .event-card:hover {
+      box-shadow: 0 8px 24px #66a6ff33;
+    }
+    .event-title {
+      font-weight: 600;
+      font-size: 1.08rem;
+      margin-bottom: 4px;
+      color: #2d3a4b;
+    }
+    .event-date {
+      color: #3a4d7a;
+      font-size: 0.97rem;
+      margin-bottom: 5px;
+    }
+    .event-desc {
+      color: #555;
+      font-size: 0.98rem;
+      line-height: 1.4;
+    }
+    .event-desc a {
+      color: #1877f2;
+      font-weight: 600;
+      text-decoration: none;
+    }
+    .event-desc a:hover {
+      text-decoration: underline;
+    }
     /* Daftar Buku */
     .book-list {
       display: grid;
@@ -129,48 +171,6 @@
       font-size: 0.9rem;
       color: #8a99a6;
     }
-    /* Event */
-    .event-list {
-      margin-top: 10px;
-      display: flex;
-      flex-direction: column;
-      gap: 18px;
-    }
-    .event-card {
-      background: #eaf6fb;
-      border-left: 6px solid #66a6ff;
-      border-radius: 10px;
-      padding: 16px 20px;
-      box-shadow: 0 2px 8px #a3d8f433;
-      transition: box-shadow 0.2s;
-    }
-    .event-card:hover {
-      box-shadow: 0 8px 24px #66a6ff33;
-    }
-    .event-title {
-      font-weight: 600;
-      font-size: 1.08rem;
-      margin-bottom: 4px;
-      color: #2d3a4b;
-    }
-    .event-date {
-      color: #3a4d7a;
-      font-size: 0.97rem;
-      margin-bottom: 5px;
-    }
-    .event-desc {
-      color: #555;
-      font-size: 0.98rem;
-      line-height: 1.4;
-    }
-    .event-desc a {
-      color: #1877f2;
-      font-weight: 600;
-      text-decoration: none;
-    }
-    .event-desc a:hover {
-      text-decoration: underline;
-    }
     /* Jam Operasional */
     .section {
       margin-top: 40px;
@@ -205,7 +205,56 @@
     .section a:hover {
       text-decoration: underline;
     }
-    /* Responsive */
+    /* Banner Cookies */
+    #cookie-banner {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: #66a6ff;
+      color: white;
+      padding: 15px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 1rem;
+      box-shadow: 0 -2px 8px rgba(0,0,0,0.15);
+      z-index: 9999;
+      flex-wrap: wrap;
+    }
+    #cookie-banner p {
+      margin: 0;
+      flex: 1 1 70%;
+    }
+    #cookie-banner button {
+      background: #fff;
+      color: #66a6ff;
+      border: none;
+      padding: 10px 18px;
+      border-radius: 24px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.3s, color 0.3s;
+      flex: 1 1 25%;
+      max-width: 130px;
+      margin-left: 10px;
+    }
+    #cookie-banner button:hover {
+      background: #e0ecfc;
+      color: #2d3a4b;
+    }
+    @media (max-width: 480px) {
+      #cookie-banner {
+        flex-direction: column;
+        text-align: center;
+        gap: 10px;
+      }
+      #cookie-banner p, #cookie-banner button {
+        flex: 1 1 100%;
+        max-width: 100%;
+        margin-left: 0;
+      }
+    }
     @media (max-width: 800px) {
       .container {
         margin: 24px 8px 40px;
@@ -228,12 +277,9 @@
   <div class="header">
     <h1>Perpustakaan DiniGurky</h1>
     <nav class="nav">
-      <nav class="nav">
-  <a href="#" target="_blank" rel="noopener noreferrer">Home</a>
-  <a href="about.html" target="_blank" rel="noopener noreferrer">About Me</a>
-  <a href="#" target="_blank" rel="noopener noreferrer">Contact Us</a>
-</nav>
-
+      <a href="Home"target="_blank" rel="noopener noreferrer">Home</a>
+      <a href="about.html" target="_blank" rel="noopener noreferrer">About Me</a>
+      <a href="Contact Us" target="_blank" rel="noopener noreferrer">Contact Us</a>
     </nav>
   </div>
 
@@ -243,6 +289,31 @@
       alt="Perpustakaan DiniGurky"
       class="library-img"
     />
+
+    <!-- Event Perpustakaan -->
+    <div class="section-title">🎉 Event Perpustakaan</div>
+    <div class="event-list">
+      <div class="event-card">
+        <div class="event-title">Dokumentasi Event Terbaru</div>
+        <div class="event-date">Tonton di Instagram!</div>
+        <div class="event-desc">
+          Saksikan keseruan event terbaru Perpustakaan DiniGurky melalui video dokumentasi di Instagram.<br />
+          <a href="https://www.instagram.com/reel/DJSvulNSo0k/?igsh=MW15c29reGh4ZzAwdg==" target="_blank" rel="noopener noreferrer">
+            Lihat Video di Instagram &rarr;
+          </a>
+        </div>
+      </div>
+      <div class="event-card">
+        <div class="event-title">Event Spesial: Kegiatan Literasi</div>
+        <div class="event-date">Lihat dokumentasi di Instagram!</div>
+        <div class="event-desc">
+          Lihat momen spesial kegiatan literasi dan edukasi di Perpustakaan DiniGurky.<br />
+          <a href="https://www.instagram.com/p/DJToZKbyyFd/?igsh=MWg4NHYxaWg5Y3FxYQ==" target="_blank" rel="noopener noreferrer">
+            Lihat Postingan Instagram &rarr;
+          </a>
+        </div>
+      </div>
+    </div>
 
     <!-- Daftar Buku -->
     <div class="section-title">📚 Daftar Buku Populer</div>
@@ -289,46 +360,6 @@
       </div>
     </div>
 
-    <!-- Event Perpustakaan -->
-    <div class="section-title">🎉 Event Perpustakaan</div>
-    <div class="event-list">
-      <div class="event-card">
-        <div class="event-title">Bedah Buku: "Laskar Pelangi"</div>
-        <div class="event-date">20 Mei 2025, 10:00 WIB</div>
-        <div class="event-desc">
-          Diskusi dan sharing inspiratif bersama penulis dan pembaca setia buku "Laskar Pelangi". Terbuka
-          untuk umum!
-        </div>
-      </div>
-      <div class="event-card">
-        <div class="event-title">Workshop Menulis Cerita Anak</div>
-        <div class="event-date">27 Mei 2025, 14:00 WIB</div>
-        <div class="event-desc">
-          Pelatihan menulis cerita anak bersama penulis profesional. Peserta akan mendapatkan sertifikat!
-        </div>
-      </div>
-      <div class="event-card">
-        <div class="event-title">Lomba Membaca Puisi</div>
-        <div class="event-date">5 Juni 2025, 09:00 WIB</div>
-        <div class="event-desc">
-          Ayo tunjukkan bakatmu dalam membaca puisi! Terbuka untuk pelajar dan umum, hadiah menarik menanti.
-        </div>
-      </div>
-      <div class="event-card">
-        <div class="event-title">Dokumentasi Event Terbaru</div>
-        <div class="event-date">Tonton di Instagram!</div>
-        <div class="event-desc">
-          Saksikan keseruan event terbaru Perpustakaan DiniGurky melalui video dokumentasi di Instagram.<br />
-          <a
-            href="https://www.instagram.com/reel/DJSvulNSo0k/?igsh=MW15c29reGh4ZzAwdg=="
-            target="_blank"
-            rel="noopener noreferrer"
-            >Lihat Video di Instagram &rarr;</a
-          >
-        </div>
-      </div>
-    </div>
-
     <!-- Jam Operasional -->
     <div class="section">
       <h2>Jam Operasional</h2>
@@ -344,5 +375,48 @@
       </p>
     </div>
   </div>
+
+  <!-- Banner Cookies -->
+  <div id="cookie-banner" style="display:none;">
+    <p>Website ini menggunakan cookies untuk meningkatkan pengalaman Anda. Dengan melanjutkan, Anda menyetujui penggunaan cookies kami.</p>
+    <button id="accept-cookies">Terima</button>
+  </div>
+
+  <script>
+    // Fungsi untuk set cookie
+    function setCookie(name, value, days) {
+      const d = new Date();
+      d.setTime(d.getTime() + days * 24 * 60 * 60 * 1000);
+      const expires = "expires=" + d.toUTCString();
+      document.cookie = name + "=" + value + ";" + expires + ";path=/";
+    }
+
+    // Fungsi untuk get cookie
+    function getCookie(name) {
+      const cname = name + "=";
+      const decodedCookie = decodeURIComponent(document.cookie);
+      const ca = decodedCookie.split(';');
+      for(let i = 0; i < ca.length; i++) {
+        let c = ca[i].trim();
+        if (c.indexOf(cname) == 0) {
+          return c.substring(cname.length, c.length);
+        }
+      }
+      return "";
+    }
+
+    // Cek cookie saat halaman dimuat
+    window.onload = function() {
+      if (getCookie("cookieAccepted") !== "true") {
+        document.getElementById("cookie-banner").style.display = "flex";
+      }
+    };
+
+    // Event klik tombol terima cookies
+    document.getElementById("accept-cookies").addEventListener("click", function() {
+      setCookie("cookieAccepted", "true", 365);
+      document.getElementById("cookie-banner").style.display = "none";
+    });
+  </script>
 </body>
 </html>
