@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pelajaran Perkalian untuk Anak</title>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background-color: #e0f7fa;
+            font-family: 'Quicksand', sans-serif;
+            color: #0277bd;
+            text-align: center;
+            padding: 50px;
+        }
+        h1 {
+            font-size: 3em;
+        }
+        h2 {
+            font-size: 2em;
+            margin-top: 20px;
+        }
+        table {
+            margin: 20px auto;
+            border-collapse: collapse;
+        }
+        th, td {
+            border: 2px solid #03a9f4;
+            padding: 10px;
+            font-size: 1.2em;
+        }
+        th {
+            background-color: #03a9f4;
+            color: white;
+        }
+        button {
+            background-color: #03a9f4;
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            font-size: 1.2em;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        button:hover {
+            background-color: #0288d1;
+        }
+        .question {
+            font-size: 1.5em;
+            margin: 20px 0;
+        }
+        input {
+            padding: 10px;
+            font-size: 1em;
+            border: 2px solid #03a9f4;
+            border-radius: 5px;
+            width: 200px;
+            transition: background-color 0.3s;
+        }
+        input.correct {
+            background-color: #c8e6c9; /* Warna hijau muda untuk jawaban benar */
+        }
+        input.incorrect {
+            background-color: #ffcdd2; /* Warna merah muda untuk jawaban salah */
+        }
+    </style>
+</head>
+<body>
+    <h1>Permainan Perkalian!</h1>
+
+    <h2>Tabel Perkalian</h2>
+    <table>
+        <tr>
+            <th>x</th>
+            <th>1</th>
+            <th>2</th>
+            <th>3</th>
+            <th>4</th>
+            <th>5</th>
+            <th>6</th>
+            <th>7</th>
+            <th>8</th>
+            <th>9</th>
+            <th>10</th>
+        </tr>
+        <!-- Generate rows for 1 to 10 -->
+        <script>
+            for (let i = 1; i <= 10; i++) {
+                document.write('<tr><td>' + i + '</td>');
+                for (let j = 1; j <= 10; j++) {
+                    document.write('<td>' + (i * j) + '</td>');
+                }
+                document.write('</tr>');
+            }
+        </script>
+    </table>
+
+    <div class="question" id="question"></div>
+    <input type="number" id="answer" placeholder="Jawabanmu">
+    <button onclick="checkAnswer()">Cek Jawaban</button>
+    <div id="result"></div>
+
+    <script>
+        let num1 = Math.floor(Math.random() * 10);
+        let num2 = Math.floor(Math.random() * 10);
+        document.getElementById('question').innerText = `Berapa ${num1} x ${num2}?`;
+
+        function checkAnswer() {
+            const userAnswer = parseInt(document.getElementById('answer').value);
+            const correctAnswer = num1 * num2;
+            const resultDiv = document.getElementById('result');
+            const answerInput = document.getElementById('answer');
+
+            // Menghapus kelas sebelumnya
+            answerInput.classList.remove('correct', 'incorrect');
+
+            if (userAnswer === correctAnswer) {
+                resultDiv.innerText = "Tepat sekali! 🎉";
+                answerInput.classList.add('correct');
+            } else {
+                resultDiv.innerText = `Salah! Coba lagi. Jawaban yang benar adalah ${correctAnswer}.`;
+                answerInput.classList.add('incorrect');
+            }
+
+            // Reset untuk pertanyaan baru
+            num1 = Math.floor(Math.random() * 10);
+            num2 = Math.floor(Math.random() * 10);
+            document.getElementById('question').innerText = `Berapa ${num1} x ${num2}?`;
+            document.getElementById('answer').value = '';
+        }
+    </script>
+</body>
+</html>
